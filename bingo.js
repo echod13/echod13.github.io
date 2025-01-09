@@ -3,7 +3,10 @@ const bingoElements = [
     "remigration", "cringe videogame comparision", "admitting tsla helps germany", "mars",
     "wall, border, fence", "TWITTER", "sigma boy", "woke",
     "interesting concerning, looking into it", "not  being right wing", "free speech", "mainstream media",
-    "AI", "elite", "racism", "islamization", "DODGE (any)", "unions", "hatin unions", "Russia", "russia is an ally", "Scholz is a fool", "weidel brown nosing Musk", "adrian Dittmann", "hitler salute"
+    "AI", "elite", "racism", "islamization", "DODGE (any)", "unions", "hatin unions", "Russia", "russia is an ally", "Scholz is a fool", "weidel brown nosing Musk", "adrian Dittmann", "hitler salute","Putin","The Green Party /die Grünen","When you say.... That makes u a Nazi here in Germany",
+    "Germany needs a strong hand","The German Mark","Tesla is great","We need less electric mobility","The Climate Change isn't human made... Not even real","We even have foreigns in our Party","Alice Weidel verplappert sich mit Steuern und dem Fakt, dass sie in der Schweiz lebt","Der Holocaust wird relativiert und/oder geleugnet",
+    "COVID19 wird relativiert und/oder geleugnet"
+
 ];
 
 function shuffleArray(array) {
