@@ -15,14 +15,14 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
-
+shuffleArray(bingoElements);
+bingoElements.splice(16);
 const gridSize = 4;
 const clickedStates = Array.from({ length: gridSize }, () => Array(gridSize).fill(false));
 const board = document.getElementById('board');
 
 
-shuffleArray(bingoElements);
-bingoElements.splice(16);
+
 
 bingoElements.forEach((text, index) => { 
     const row = Math.floor(index / gridSize);
