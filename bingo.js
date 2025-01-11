@@ -24,6 +24,10 @@ const board = document.getElementById('board');
 
 
 
+
+
+
+
 bingoElements.forEach((text, index) => { 
     const row = Math.floor(index / gridSize);
     const col = index % gridSize;
