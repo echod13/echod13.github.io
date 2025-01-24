@@ -34,7 +34,7 @@ const eintragen = document.getElementById('eintragen').addEventListener('click',
     const president = presidentMenu.value;
     const chancellor = chancellorMenu.value;
     const paragraph = document.createElement('p');
-    paragraph.textContent = `Der Präsident${president} meldet, dass ${presidentReports} gezogen wurden. Davon hat er ${presidentGave} an den Kanzler ${chancellor} weitergegeben. Der Kanzler berichtet ${chancellorReports} bekommen zu haben und hat eine ${result} Karte gespielt. Zwischen den Aussagen des Presidenten und Kanzlers liegt ${isConflict} vor!`;
+    paragraph.textContent = `Der Präsident ${president} meldet, dass ${presidentReports} gezogen wurden. Davon hat er ${presidentGave} an den Kanzler ${chancellor} weitergegeben. Der Kanzler berichtet ${chancellorReports} bekommen zu haben und hat eine ${result} Karte gespielt. Zwischen den Aussagen des Presidenten und Kanzlers liegt ${isConflict} vor!`;
     if (isConflict === 'ein Konflikt') {
         paragraph.style.color = 'red'; // Red for conflict
       } else  {
