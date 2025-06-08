@@ -1,34 +1,36 @@
 let d = document.createElement('div');
-const bingoElements = [
-    "remigration", "cringe videogame comparision", "admitting tsla helps germany", "mars",
-    "wall, border, fence", "TWITTER", "sigma boy", "woke",
-    "interesting concerning, looking into it", "not  being right wing", "free speech", "mainstream media",
-    "AI", "elite", "racism", "islamization", "DODGE (any)", "unions", "hatin unions", "Russia", "russia is an ally", "Scholz is a fool", "weidel brown nosing Musk", "adrian Dittmann", "hitler salute","Putin","The Green Party /die Grünen","When you say.... That makes u a Nazi here in Germany",
-    "Germany needs a strong hand","The German Mark","Tesla is great","We need less electric mobility","The Climate Change isn't human made... Not even real","We even have foreigns in our Party","Alice Weidel verplappert sich mit Steuern und dem Fakt, dass sie in der Schweiz lebt","Der Holocaust wird relativiert und/oder geleugnet",
-    "COVID19 wird relativiert und/oder geleugnet", "Weidel nciht queer"
+bingoElements = [
+    "Griffyndors werden gebasht", "Hufflepuffs sind Statisten ", "Pfosten ", "Mindestens 2 Spieler sind nicht aufmerksam",
+    "Hufflepuffs Pilze", "Snacks werden gedealt","Jemand kommt zu spät","Benita plan random events","Dumme entscheidung der Gruppe","Ein guter Tipp von Dana wird ingoriert","Johannes verkauft die Gruppe als dumm",
+    "Sera zündet was an", "Dana muss Lore googeln", "Ein neuer Npc dessen Name eine Anspielung ist","Maincharacter","Placeholder"
 
 ];
+let clickedStates;
+const importButon = document.getElementById('import').addEventListener('click', () => importBoard());
+const startButon = document.getElementById('new').addEventListener('click', () => newBoard());
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i >= 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+function importBoard(){
+      const input = document.getElementById("inputField");
+    const value = input.value
+    if(value){
+        createBoard(value.split(","))
     }
 }
+function newBoard(){
+
 shuffleArray(bingoElements);
 bingoElements.splice(16);
+navigator.clipboard.writeText(bingoElements);
+
+createBoard(bingoElements);
+
+}
+function createBoard(elements){
 const gridSize = 4;
-const clickedStates = Array.from({ length: gridSize }, () => Array(gridSize).fill(false));
+clickedStates = Array.from({ length: gridSize }, () => Array(gridSize).fill(false));
 const board = document.getElementById('board');
 
-
-
-
-
-
-
-
-bingoElements.forEach((text, index) => { 
+elements.forEach((text, index) => { 
     const row = Math.floor(index / gridSize);
     const col = index % gridSize;
 
@@ -51,7 +53,13 @@ bingoElements.forEach((text, index) => {
 
     board.appendChild(button);
 });
-
+}
+function shuffleArray(array) {
+    for (let i = array.length - 1; i >= 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
 
 function checkWinCondition(row, col) {
    
