@@ -3,7 +3,7 @@ bingoElements = [
     "Griffyndors werden gebasht", "Hufflepuffs sind Statisten ", "Pfosten ", "Mindestens 2 Spieler sind nicht aufmerksam",
     "Hufflepuffs Pilze", "Snacks werden gedealt","Jemand kommt zu spät","Benita plan random events","Dumme entscheidung der Gruppe","Ein guter Tipp von Dana wird ingoriert","Johannes verkauft die Gruppe als dumm",
     "Sera zündet was an", "Dana muss Lore googeln", "Ein neuer Npc dessen Name eine Anspielung ist","Maincharacter","Brauchen zulange an einer Tür","Tom ist ein Edgelord (Will mysteriös sein)", "Strafarbeit/Punktabzug","Es wurde eine 20 gewürfelt",
-    "Es wurde eine 1 gewürfelt"
+    "Es wurde eine 1 gewürfelt","jemand muss früher gehen"
 
 
 
