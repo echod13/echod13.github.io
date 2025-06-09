@@ -33,6 +33,7 @@ function createBoard(elements){
 const gridSize = 4;
 clickedStates = Array.from({ length: gridSize }, () => Array(gridSize).fill(false));
 const board = document.getElementById('board');
+if(board.childElementCount>10) return;
 
 elements.forEach((text, index) => { 
     const row = Math.floor(index / gridSize);
