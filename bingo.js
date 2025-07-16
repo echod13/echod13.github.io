@@ -1,9 +1,10 @@
 let d = document.createElement('div');
 bingoElements = [
     "Griffyndors werden gebasht", "Hufflepuffs sind Statisten ", "Pfosten ", "Mindestens 2 Spieler sind nicht aufmerksam",
-    "Hufflepuffs Pilze", "Snacks werden gedealt","Jemand kommt zu spät","Benita plan random events","Dumme entscheidung der Gruppe","Ein guter Tipp von Dana wird ingoriert","Johannes verkauft die Gruppe als dumm",
+    "Hufflepuffs Pilze", "Snacks werden gedealt","Jemand kommt zu spät","Benita plan random events","Dumme entscheidung der Gruppe","Ein guter Tipp von Meister/in wird ingoriert","Johannes verkauft die Gruppe als dumm",
     "Sera zündet was an", "Dana muss Lore googeln", "Ein neuer Npc dessen Name eine Anspielung ist","Maincharacter","Brauchen zulange an einer Tür","Tom ist ein Edgelord (Will mysteriös sein)", "Strafarbeit/Punktabzug","Es wurde eine 20 gewürfelt",
-    "Es wurde eine 1 gewürfelt","jemand muss früher gehen", "Universum stirbt","sidecharacter bash"
+    "Es wurde eine 1 gewürfelt","Ein NPC Zitat ist eine Anspielung","jemand muss früher gehen", "Universum stirbt","sidecharacter bash"
+
 ];
 let clickedStates;
 const importButon = document.getElementById('import').addEventListener('click', () => importBoard());
