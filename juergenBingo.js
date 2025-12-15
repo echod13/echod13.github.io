@@ -32,7 +32,7 @@ function importBoard(){
 function newBoard(){
 
 shuffleArray(bingoElements);
-bingoElements.splice(16);
+bingoElements.splice(9);
 navigator.clipboard.writeText(bingoElements);
 
 createBoard(bingoElements);
