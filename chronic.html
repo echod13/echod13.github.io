@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shenannigans</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 10px;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        .grid-container button {
+            padding: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: lightgray;
+        }
+        .grid-container button.disabled {
+            background-color: red;
+            cursor: not-allowed;
+        }
+           
+    .button-group {
+      display: flex;
+      justify-content: center; 
+      gap: 10px; 
+      margin-top: 20px;
+    }
+
+    
+    .button-group button {
+      background-color: #007bff; 
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    
+    .button-group button:hover {
+      background-color: #0056b3;
+    }
+
+    
+    .button-group button:active {
+      background-color: #003d80;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lets goo SH</h1>
+    </header>
+
+    <div id="board"  class="grid-container"> </div>
+    <input type="text" id="inputField" placeholder="Enter text" />
+    <button id="appendButton">Add Player</button>
+    <button id="startButton">start Game</button>
+    <ul id="arrayDisplay"></ul>
+    <select id="presidentMenu">
+        <option value="" disabled selected>Select an item</option>
+      </select>
+      <h2>President reports:</h2>
+      <div class="button-group">
+        <button id="NoAnswerp">No Answer</button>
+        <button id="draw3red">draw3red</button>
+        <button id="draw2red">draw2red</button>
+        <button id="draw1red">draw1red</button>
+        <button id="draw0red">draw0red</button>
+      </div>
+      <div class="button-group">
+        <button id="gave2red">gave2red</button>
+        <button id="gave1red">gave1red</button>
+        <button id="gave0red">gave0red</button>
+      </div>
+      <h2>Chancellor reports:</h2>
+    <select id="chancellorMenu">
+        <option value="" disabled selected>Select an item</option>
+      </select>
+      <div class="button-group">
+        <button id="NoAnswerc">No Answer</button>
+        <button id="recieved2red">recieved2red</button>
+        <button id="recieved1red">recieved1red</button>
+        <button id="recieved0red">recieved0red</button>
+      </div>
+      <div class="button-group">
+        <button id="conflict">conflict</button>
+        <button id="noConflict">noConflict</button>
+        
+      </div>
+      <div class="button-group">
+        <button id="redCard">redCard</button>
+        <button id="blueCard">blueCard</button>
+      </div>
+      <div class="button-group">
+        <button id="eintragen">eintragen</button>
+      </div>
+      <div id="outputArea">
+        <strong>gespielte Karten:</strong>
+        <div id="outputContent"></div>
+      </div>
+    <footer>
+        <p>&copy; 2025 echod13</p>
+    </footer>
+
+    
+    <script src="shcronic.js"></script> 
+</body>
+</html>

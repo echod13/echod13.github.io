@@ -1,41 +1,95 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bingo, Bingo BINNGOOOO</title>
-    <style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 10px;
-            max-width: 400px;
-            margin: 20px auto;
-        }
-        .grid-container button {
-            padding: 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: lightgray;
-        }
-        .grid-container button.disabled {
-            background-color: red;
-            cursor: not-allowed;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bullshitsammlung</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #120520;
+      color: #222;
+    }
+    header {
+      background: #1f2937;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .card a:hover {
+      background: #1d4ed8;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Lets goo Biiingo</h1>
-    </header>
+  <header>
+    <h1>Willkommen zu meiner Bullshitsammlung</h1>
+    <p>hier könnte ein dummer Spruch stehen, aber ich bin gerade nicht kreativ genug</p>
+  </header>
 
-    <div id="board"  class="grid-container"> </div>
+  <main>
+    <h2>Explore</h2>
+    <div class="links">
+      <div class="card">
+        <h3>DnD Bingo</h3>
+        <p>Learn more about topic one.</p>
+        <a href="dndBingo.html">Ab ins Verderben</a>
+      </div>
 
-    <footer>
-        <p>&copy; 2025 echod13</p>
-    </footer>
+      <div class="card">
+        <h3>Jürgen Bingo</h3>
+        <p>Frohe Weihnachten.</p>
+        <a href="juergenbingo.html">Ab ins festliche Verderben</a>
+      </div>
 
-    
-    <script src="bingo.js"></script> 
+      <div class="card">
+        <h3>Garage</h3>
+        <p>Still under construction</p>
+        <a href="page3.html">hier passiert nix</a>
+      </div>
+      <div class="card">
+        <h3>card chronic</h3>
+        <p>kritisches Kartenspiel</p>
+        <a href="chronic.html">deprecated</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+     2025 echod13  </footer>
 </body>
 </html>
