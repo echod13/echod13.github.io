@@ -19,7 +19,6 @@ const bingoElements = [
 "Legt die Füße auf den Wohnzimmertisch (Bonus wenn Oma ihn anmeckert)"
 ];
 let clickedStates;
-const gridSize = 3;
 const importButon = document.getElementById('import').addEventListener('click', () => importBoard());
 const startButon = document.getElementById('new').addEventListener('click', () => newBoard());
 
@@ -41,10 +40,10 @@ createBoard(bingoElements);
 }
 
 function createBoard(elements){
-
+const gridSize = 3;
 clickedStates = Array.from({ length: gridSize }, () => Array(gridSize).fill(false));
 const board = document.getElementById('board');
-board.innerHTML = "";
+if(board.childElementCount>5) return;
 
 elements.forEach((text, index) => { 
     const row = Math.floor(index / gridSize);
@@ -79,22 +78,22 @@ function shuffleArray(array) {
 
 function checkWinCondition(row, col) {
    
-    if (clickedStates[row].every(cell => cell ===true)) {
+    if (clickedStates[row].every(cell => cell)) {
         return true;
     }
 
     
-    if (clickedStates.every(row => row[col] ===true)) {
+    if (clickedStates.every(row => row[col])) {
         return true;
     }
 
     
-    if (row === col && clickedStates.every((row, index) => row[index] ===true)) {
+    if (row === col && clickedStates.every((row, index) => row[index])) {
         return true;
     }
 
    
-    if (row + col === gridSize - 1 && clickedStates.every((row, index) => row[gridSize - 1 - index] ===true)) {
+    if (row + col === gridSize - 1 && clickedStates.every((row, index) => row[gridSize - 1 - index])) {
         return true;
     }
 
