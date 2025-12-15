@@ -1,12 +1,22 @@
 let d = document.createElement('div');
 const bingoElements = [
-    "remigration", "cringe videogame comparision", "admitting tsla helps germany", "mars",
-    "wall, border, fence", "TWITTER", "sigma boy", "woke",
-    "interesting concerning, looking into it", "not  being right wing", "free speech", "mainstream media",
-    "AI", "elite", "racism", "islamization", "DODGE (any)", "unions", "hatin unions", "Russia", "russia is an ally", "Scholz is a fool", "weidel brown nosing Musk", "adrian Dittmann", "hitler salute","Putin","The Green Party /die Grünen","When you say.... That makes u a Nazi here in Germany",
-    "Germany needs a strong hand","The German Mark","Tesla is great","We need less electric mobility","The Climate Change isn't human made... Not even real","We even have foreigns in our Party","Alice Weidel verplappert sich mit Steuern und dem Fakt, dass sie in der Schweiz lebt","Der Holocaust wird relativiert und/oder geleugnet",
-    "COVID19 wird relativiert und/oder geleugnet", "Weidel nciht queer"
-
+"Rammt seinen Bauch jemanden in den Rücken ",
+"Sagt irgendetwas was totenstille auslöst",
+"Holt nichts zu trinken trotz mehrfacher Aufforderung",
+"Wünscht nicht frohe Weihnachten",
+"Schlägt jemandem auf den Arm ",
+"Spricht mit sich selbst ",
+"Schmatzt und schlingt alles in sich rein.",
+"Nimmt direkt erstmal mehrere Stücke kuchen auf seinen teller",
+"Nimmt riesen Haufen an Sahne",
+"Beleidigt Joel grundlos als dumm",
+"Macht Joels Geschenk runter",
+"Sagt Letizia und/oder Leonie dass sie sowieso von nix ne Ahnung haben",
+"Rotzt rum und zieht die Nase hoch",
+"Putzt sich die Nase mit einem zerfledderten Tempo",
+"Tritt jemanden unterm Tisch weil er seine Quadratlatschen aggressiv ausstreckt",
+"Reibt seine Füße zusammen (Socken reiben)",
+"Legt die Füße auf den Wohnzimmertisch (Bonus wenn Oma ihn anmeckert)"
 ];
 
 function shuffleArray(array) {
@@ -16,7 +26,7 @@ function shuffleArray(array) {
     }
 }
 shuffleArray(bingoElements);
-bingoElements.splice(16);
+bingoElements.splice(9);
 const gridSize = 3;
 const clickedStates = Array.from({ length: gridSize }, () => Array(gridSize).fill(false));
 const board = document.getElementById('board');
