@@ -18,27 +18,34 @@ const bingoElements = [
 "Reibt seine Füße zusammen (Socken reiben)",
 "Legt die Füße auf den Wohnzimmertisch (Bonus wenn Oma ihn anmeckert)"
 ];
+let clickedStates;
+const importButon = document.getElementById('import').addEventListener('click', () => importBoard());
+const startButon = document.getElementById('new').addEventListener('click', () => newBoard());
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i >= 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+function importBoard(){
+      const input = document.getElementById("inputField");
+    const value = input.value
+    if(value){
+        createBoard(value.split(","))
     }
 }
+function newBoard(){
+
 shuffleArray(bingoElements);
-bingoElements.splice(9);
-const gridSize = 3;
-const clickedStates = Array.from({ length: gridSize }, () => Array(gridSize).fill(false));
+bingoElements.splice(16);
+navigator.clipboard.writeText(bingoElements);
+
+createBoard(bingoElements);
+
+}
+
+function createBoard(elements){
+const gridSize = 4;
+clickedStates = Array.from({ length: gridSize }, () => Array(gridSize).fill(false));
 const board = document.getElementById('board');
+if(board.childElementCount>10) return;
 
-
-
-
-
-
-
-
-bingoElements.forEach((text, index) => { 
+elements.forEach((text, index) => { 
     const row = Math.floor(index / gridSize);
     const col = index % gridSize;
 
@@ -61,7 +68,13 @@ bingoElements.forEach((text, index) => {
 
     board.appendChild(button);
 });
-
+}
+function shuffleArray(array) {
+    for (let i = array.length - 1; i >= 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
 
 function checkWinCondition(row, col) {
    
