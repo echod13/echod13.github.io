@@ -29,7 +29,7 @@ let clickedStates;
 const importButon = document.getElementById('import').addEventListener('click', () => getContext(1));
 const startButon = document.getElementById('new').addEventListener('click', () => getContext(2));
 function getbingoElements(){
-    if(window.location.href.includes('juergen')){
+    if(window.location.includes('juergen')){
         return juergenElements;
     } else {
         return dndElements;
