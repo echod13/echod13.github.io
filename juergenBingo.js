@@ -40,6 +40,7 @@ createBoard(bingoElements);
 }
 
 function createBoard(elements){
+alert(location);
 const gridSize = 3;
 clickedStates = Array.from({ length: gridSize }, () => Array(gridSize).fill(false));
 const board = document.getElementById('board');
