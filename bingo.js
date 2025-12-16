@@ -36,10 +36,10 @@ function getbingoElements(locString){
     }
 }
 function getGridsize(locString){
-    if(locString.contains('juergen')){return 3}else return 4;
+    if(locString.includes('juergen')){return 3}else return 4;
 }
 function getContext(param){
-    let loc = window.location;
+    let loc = window.location.href;
     let gridNumber = getGridsize(loc);
     if(param === 1){
         createBoard(importBoard(), gridNumber);
@@ -57,7 +57,7 @@ function importBoard(){
     }
 }
 function newBoard(arrayParam, gridSizeParam){
-const bingoElements = [];
+let bingoElements = [];
 bingoElements = shuffleArray(arrayParam);
 bingoElements.splice(gridSizeParam**2);
 navigator.clipboard.writeText(bingoElements);
@@ -86,8 +86,9 @@ elements.forEach((text, index) => {
             button.disabled = true;
 
             
-            if (checkWinCondition(row, col)) {
-                alert("Bingo! !");
+            if (checkWinCondition(row, col,gridSize)) {
+                confettiBurst();
+                setTimeout(() => alert("Bingo! 🎉"), 200);
             }
         }
     });
@@ -103,7 +104,7 @@ function shuffleArray(array) {
     return array;
 }
 
-function checkWinCondition(row, col) {
+function checkWinCondition(row, col, gridSize) {
    
     if (clickedStates[row].every(cell => cell)) {
         return true;
@@ -125,4 +126,20 @@ function checkWinCondition(row, col) {
     }
 
     return false;
+}
+function confettiBurst() {
+    const confettiCount = 150;
+
+    for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confetti.style.animationDuration = 2 + Math.random() * 3 + "s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => confetti.remove(), 5000);
+    }
 }
