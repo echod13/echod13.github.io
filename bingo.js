@@ -28,22 +28,23 @@ const juergenElements = [
 let clickedStates;
 const importButon = document.getElementById('import').addEventListener('click', () => getContext(1));
 const startButon = document.getElementById('new').addEventListener('click', () => getContext(2));
-function getbingoElements(){
-    if(window.location.includes('juergen')){
+function getbingoElements(locString){
+    if(locString.includes('juergen')){
         return juergenElements;
     } else {
         return dndElements;
     }
 }
-function getGridsize(){
-    if(window.location.contains('juergen')){return 3}else return 4;
+function getGridsize(locString){
+    if(locString.contains('juergen')){return 3}else return 4;
 }
 function getContext(param){
-    let gridNumber = getGridsize();
+    let loc = window.location;
+    let gridNumber = getGridsize(loc);
     if(param === 1){
         createBoard(importBoard(), gridNumber);
     } else if (param === 2){
-        createBoard(newBoard(getbingoElements(),gridNumber),gridNumber);
+        createBoard(newBoard(getbingoElements(loc),gridNumber),gridNumber);
     } else {
         return [];
     }
