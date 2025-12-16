@@ -23,7 +23,8 @@ const juergenElements = [
 "Putzt sich die Nase mit einem zerfledderten Tempo",
 "Tritt jemanden unterm Tisch weil er seine Quadratlatschen aggressiv ausstreckt",
 "Reibt seine Füße zusammen (Socken reiben)",
-"Legt die Füße auf den Wohnzimmertisch (Bonus wenn Oma ihn anmeckert)"
+"Legt die Füße auf den Wohnzimmertisch (Bonus wenn Oma ihn anmeckert)",
+"Weißt du was du für den Baum sonst hättest bezahlen müssen/ Was sowas kostet!"
 ];
 let clickedStates;
 const importButon = document.getElementById('import').addEventListener('click', () => getContext(1));
