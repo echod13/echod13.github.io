@@ -28,22 +28,23 @@ const juergenElements = [
 let clickedStates;
 const importButon = document.getElementById('import').addEventListener('click', () => getContext(1));
 const startButon = document.getElementById('new').addEventListener('click', () => getContext(2));
-function getbingoElements(){
-    if(window.location.includes('juergen')){
+function getbingoElements(locString){
+    if(locString.includes('juergen')){
         return juergenElements;
     } else {
         return dndElements;
     }
 }
-function getGridsize(){
-    if(window.location.contains('juergen')){return 3}else return 4;
+function getGridsize(locString){
+    if(locString.includes('juergen')){return 3}else return 4;
 }
 function getContext(param){
-    let gridNumber = getGridsize();
+    let loc = window.location.href;
+    let gridNumber = getGridsize(loc);
     if(param === 1){
         createBoard(importBoard(), gridNumber);
     } else if (param === 2){
-        createBoard(newBoard(getbingoElements(),gridNumber),gridNumber);
+        createBoard(newBoard(getbingoElements(loc),gridNumber),gridNumber);
     } else {
         return [];
     }
@@ -56,7 +57,7 @@ function importBoard(){
     }
 }
 function newBoard(arrayParam, gridSizeParam){
-const bingoElements = [];
+let bingoElements = [];
 bingoElements = shuffleArray(arrayParam);
 bingoElements.splice(gridSizeParam**2);
 navigator.clipboard.writeText(bingoElements);
@@ -85,8 +86,9 @@ elements.forEach((text, index) => {
             button.disabled = true;
 
             
-            if (checkWinCondition(row, col)) {
-                alert("Bingo! !");
+            if (checkWinCondition(row, col,gridSize)) {
+                confettiBurst();
+                setTimeout(() => alert("Bingo! 🎉"), 200);
             }
         }
     });
@@ -102,7 +104,7 @@ function shuffleArray(array) {
     return array;
 }
 
-function checkWinCondition(row, col) {
+function checkWinCondition(row, col, gridSize) {
    
     if (clickedStates[row].every(cell => cell)) {
         return true;
@@ -124,4 +126,20 @@ function checkWinCondition(row, col) {
     }
 
     return false;
+}
+function confettiBurst() {
+    const confettiCount = 150;
+
+    for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confetti.style.animationDuration = 2 + Math.random() * 3 + "s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => confetti.remove(), 5000);
+    }
 }
