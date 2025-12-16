@@ -28,14 +28,22 @@ const juergenElements = [
 let clickedStates;
 const importButon = document.getElementById('import').addEventListener('click', () => getContext(1));
 const startButon = document.getElementById('new').addEventListener('click', () => getContext(2));
+function getbingoElements(){
+    if(window.location.href.includes('juergen')){
+        return juergenElements;
+    } else {
+        return dndElements;
+    }
+}
 function getGridsize(){
     if(window.location.contains('juergen')){return 3}else return 4;
 }
 function getContext(param){
+    let gridNumber = getGridsize();
     if(param === 1){
-        createBoard(importBoard(), getGridsize());
+        createBoard(importBoard(), gridNumber);
     } else if (param === 2){
-        createBoard(newBoard(), getGridsize());
+        createBoard(newBoard(getbingoElements(),gridNumber),gridNumber);
     } else {
         return [];
     }
@@ -44,7 +52,7 @@ function importBoard(){
       const input = document.getElementById("inputField");
     const value = input.value
     if(value){
-        createBoard( bingoElements = value.split(","), getGridsize());
+        return value.split(",");
     }
 }
 function newBoard(arrayParam, gridSizeParam){
@@ -53,7 +61,7 @@ bingoElements = shuffleArray(arrayParam);
 bingoElements.splice(gridSizeParam**2);
 navigator.clipboard.writeText(bingoElements);
 
-createBoard(bingoElements, gridSizeParam);
+return bingoElements;
 
 }
 
